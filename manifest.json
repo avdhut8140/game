@@ -2,7 +2,7 @@
     "name": "Tic Tac Toe",
     "start_url": "/game",
     "short_name": "xno",
-    "display": "standalonne",
+    "display": "standalone",
     "description": "The Best Game EVER 😎",
     "icons": [
         {
