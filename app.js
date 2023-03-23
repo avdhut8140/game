@@ -44,8 +44,10 @@ function startgame() {
 
 function game(id) {
     const box = document.getElementById(id)
-
-
+    const a = document.getElementById("chancep1")
+    const b = document.getElementById("chancep2")
+    const m = document.getElementById("chancebg1")
+    const p = document.getElementById("chancebg2")
     const isRed = box.classList.contains("bg-danger")
     const isGreen = box.classList.contains("bg-success")
     // console.log(isRed);
@@ -53,13 +55,51 @@ function game(id) {
     if (!isRed && !isGreen) {
 
         if (chance === "p1") {
+            document.getElementById("turn2").innerHTML = `<div class="alert alert-success"> its your turn </div>`
+            setTimeout(function () {
+                document.getElementById("turn2").innerHTML = ""
+            }, 3000)
 
             box.classList.add("bg-danger")
             box.innerHTML = `<h1>X</h1>`
+            a.classList.remove("progress")
+            b.classList.add("progress")
+            m.classList.remove("bg-danger")
+            m.classList.remove("progress-bar-striped")
+            m.classList.remove("progress-bar-animated")
+            m.classList.add("alert")
+            m.classList.add("alert-danger")
+            p.classList.remove("alert")
+            p.classList.remove("alert-success")
+            p.classList.add("bg-success")
+            p.classList.add("progress-bar-striped")
+            p.classList.add("progress-bar-animated")
+
+
             chance = "p2"
         } else {
+            document.getElementById("turn1").innerHTML = `<div class="alert alert-danger"> its your turn </div>`
+            setTimeout(function () {
+                document.getElementById("turn1").innerHTML = ""
+            }, 3000)
+
             box.classList.add("bg-success")
             box.innerHTML = `<h1>O</h1>`
+            a.classList.add("progress")
+            b.classList.remove("progress")
+            p.classList.remove("bg-success")
+            p.classList.remove("progress-bar-striped")
+            p.classList.remove("progress-bar-animated")
+            p.classList.add("alert")
+            p.classList.add("alert-success")
+            m.classList.remove("alert")
+            m.classList.remove("alert-danger")
+            m.classList.add("bg-danger")
+            m.classList.add("progress-bar-striped")
+            m.classList.add("progress-bar-animated")
+
+
+
             chance = "p1"
         }
 
@@ -132,8 +172,8 @@ function checkwimmer(id1, id2, id3, color) {
     if ((isBOX1 && isBOX2 && isBOX3)) {
         console.log(`${color} is winner`);
         color === "bg-danger" ? document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
-                     ${m} is winner 🎇🎇🤩🤩</div>` : document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
-                     ${n} is winner 💥💥🤑🤑</div>`
+             ${m} is winner 🎇🎇🤩🤩</div>` : document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
+             ${n} is winner 💥💥🤑🤑</div>`
 
 
 
@@ -187,20 +227,20 @@ function checkall() {
 
 }
 
-        // function totalwin() {
-        //     let twin = 0
-        //     for (let i = 1; i <= 9; i++) {
+// function totalwin() {
+//     let twin = 0
+//     for (let i = 1; i <= 9; i++) {
 
 
-        //         const isRed = document.getElementById(`b${i}`).classList.contains("bg-danger")
-        //         const isGreen = document.getElementById(`b${i}`).classList.contains("bg-success")
-        //         if (isRed || isGreen) {
-        //             twin++
-        //             document.getElementById("player1wincount").innerHTML = twin
-        //         }
+//         const isRed = document.getElementById(`b${i}`).classList.contains("bg-danger")
+//         const isGreen = document.getElementById(`b${i}`).classList.contains("bg-success")
+//         if (isRed || isGreen) {
+//             twin++
+//             document.getElementById("player1wincount").innerHTML = twin
+//         }
 
-        //     }
+//     }
 
 
-        // }
+// }
 
