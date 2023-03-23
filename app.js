@@ -23,9 +23,9 @@ function startgame() {
 
     if (playername1 === "" || playername2 === "") {
         console.log("name requrired");
-        document.getElementById("output").innerHTML = ` <div class="alert alert-danger"> please Enter Name</div>`
+        document.getElementById("worning").innerHTML = ` <div class="alert alert-danger"> please Enter Name</div>`
         setTimeout(() => {
-            document.getElementById("output").innerHTML = ""
+            document.getElementById("worning").innerHTML = ""
         }, 2000)
 
 
@@ -75,7 +75,7 @@ function game(id) {
             reserGame()
 
         }, 3000)
-        reserGame()
+        dcount++
     }
     // totalwin()
 
@@ -126,11 +126,15 @@ function checkwimmer(id1, id2, id3, color) {
     const isBOX1 = document.getElementById(id1).classList.contains(color)
     const isBOX2 = document.getElementById(id2).classList.contains(color)
     const isBOX3 = document.getElementById(id3).classList.contains(color)
+    const m = document.getElementById("playername1").value
+    const n = document.getElementById("playername2").value
 
     if ((isBOX1 && isBOX2 && isBOX3)) {
         console.log(`${color} is winner`);
-        document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
-                     ${color === "bg-danger" ? "player1" : "player2"} winner</div>`
+        color === "bg-danger" ? document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
+                     ${m} is winner 🎇🎇🤩🤩</div>` : document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
+                     ${n} is winner 💥💥🤑🤑</div>`
+
 
 
         setTimeout(function () {
