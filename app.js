@@ -38,7 +38,7 @@ function startgame() {
 
 
     }
-
+  
 }
 
 
@@ -106,7 +106,7 @@ function game(id) {
     }
 
     if (!winner() && checkall()) {
-        document.getElementById("output").innerHTML = `<div class="alert alert-warning"> DRAW MATCH </div>`
+        document.getElementById("output").innerHTML = `<div class="alert alert-warning">🥴🥴 DRAW MATCH 🥴🥴 </div>`
 
         setTimeout(function () {
             document.getElementById("output").innerHTML = ""
@@ -171,7 +171,7 @@ function checkwimmer(id1, id2, id3, color) {
 
     if ((isBOX1 && isBOX2 && isBOX3)) {
         console.log(`${color} is winner`);
-        color === "bg-danger" ? document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
+        color === "bg-danger" ? document.getElementById("output").innerHTML = `<div class="alert alert-danger"> 
              ${m} is winner 🎇🎇🤩🤩</div>` : document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
              ${n} is winner 💥💥🤑🤑</div>`
 
@@ -189,7 +189,7 @@ function checkwimmer(id1, id2, id3, color) {
 
     } return false
 
-
+    
 }
 function reserGame() {
     for (let i = 1; i <= 9; i++) {
@@ -226,7 +226,6 @@ function checkall() {
     return boxcount === 9 ? true : false
 
 }
-
 // function totalwin() {
 //     let twin = 0
 //     for (let i = 1; i <= 9; i++) {

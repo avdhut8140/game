@@ -22,12 +22,15 @@
 </head>
 
 <body>
-    <div class="container " id="playercard">
+    <div class="container" id="playercard">
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
                 <div class="card">
-                    <div class="card-header">Enter Name of player </div>
-                    <div class="card-body">
+                    <div class="card-header text-center" style="background-color: rgb(202, 182, 223);  ">
+                        <h1>🌼💐Welcome Time Pass🌺🌷 </h1>
+                        <P>🏴‍☠️🚥Enter Name of player🚥🏴‍☠️</P>
+                    </div>
+                    <div class="card-body ">
                         <input class="form-control" id="playername1" type="text" placeholder="Enter Name of player 1"></input>
                         <input class="form-control" id="playername2" type="text" placeholder="Enter Name of player 2"></input>
                         <button class="btn btn-primary w-100" onclick="startgame()">start Game</button>
@@ -39,15 +42,38 @@
 
     <div class="container my-5 " id="worning"></div>
     <!-- container>.row>.col-sm-6.offset-sm-3>.card>.card-header+.card-body -->
-    <div class="container d-none " id="gamecard">
-        <div class="row">
+    <div class="container d-none"  id="gamecard">
+        <div class="row" id="title">
             <div class="col-sm-10 offset-sm-2">
                 <div class="card">
                     <div class="card-header text-center alert alert-primary">
-                        <h1 class="text-dark">😉Time Pass😎</h1>
+                        <h1 class="text-dark">😉Time Pass😉</h1>
                     </div>
                     <div class="card-body ">
-                        <div class="row">
+                        <div class="row" id="dots">
+                         
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body alert alert-warning">
+                                        <div class="d-flex justify-content-between ">
+                                            <h6>draw</h6>
+                                            <span id="drawcount">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body alert alert-dark">
+                                        <div class="d-flex justify-content-between">
+                                            <h6>total</h6>
+                                            <span id="totalcount">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-sm-3">
                                 <div class="card progress " style="height: 75px" id="chancep1">
                                     <div class="card-body bg-danger progress-bar-striped progress-bar-animated"
@@ -71,31 +97,12 @@
                                     <p id="turn1"></p>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body alert alert-warning">
-                                        <div class="d-flex justify-content-between ">
-                                            <h6>draw</h6>
-                                            <span id="drawcount">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body alert alert-dark">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>total</h6>
-                                            <span id="totalcount">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
 
                         <div class="container my-5" id="output"></div>
                         <!-- .row>.col-4*9>.box>{$} -->
-                        <div class="row">
+                        <div class="row" id="user">
                             <div class="col-4">
                                 <div class="box" id="b1" onclick="game('b1')">1</div>
                             </div>
