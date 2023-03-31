@@ -55,10 +55,10 @@ function game(id) {
     if (!isRed && !isGreen) {
 
         if (chance === "p1") {
-            document.getElementById("turn2").innerHTML = `<div class="alert alert-success"> its your turn </div>`
-            setTimeout(function () {
-                document.getElementById("turn2").innerHTML = ""
-            }, 3000)
+            // document.getElementById("turn2").innerHTML = `<div class="alert alert-success"> its your turn </div>`
+            // setTimeout(function () {
+            //     document.getElementById("turn2").innerHTML = ""
+            // }, 3000)
             
             box.classList.add("bg-danger")
             box.innerHTML = `<h1>X</h1>`
@@ -78,10 +78,10 @@ function game(id) {
 
             chance = "p2"
         } else {
-            document.getElementById("turn2").innerHTML = `<div class="alert alert-danger"> its your turn </div>`
-            setTimeout(function () {
-                document.getElementById("turn2").innerHTML = ""
-            }, 3000)
+            // document.getElementById("turn2").innerHTML = `<div class="alert alert-danger"> its your turn </div>`
+            // setTimeout(function () {
+            //     document.getElementById("turn2").innerHTML = ""
+            // }, 3000)
             
             box.classList.add("bg-success")
             box.innerHTML = `<h1>O</h1>`
