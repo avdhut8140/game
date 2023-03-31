@@ -6,11 +6,11 @@
     "description": "The Best Game EVER 😎",
     "icons": [
         {
-            "src": "asset/logo-48x48.png",
+            "src": "asset/pt",
             "sizes": "48x48"
         },
         {
-            "src": "asset/logo-72x72.png",
+            "src": "asset/logo-144x144.png",
             "sizes": "72x72"
         },
         {
