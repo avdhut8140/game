@@ -59,7 +59,7 @@ function game(id) {
             setTimeout(function () {
                 document.getElementById("turn2").innerHTML = ""
             }, 3000)
-
+            
             box.classList.add("bg-danger")
             box.innerHTML = `<h1>X</h1>`
             a.classList.remove("progress")
@@ -74,15 +74,15 @@ function game(id) {
             p.classList.add("bg-success")
             p.classList.add("progress-bar-striped")
             p.classList.add("progress-bar-animated")
-
+            
 
             chance = "p2"
         } else {
-            document.getElementById("turn1").innerHTML = `<div class="alert alert-danger"> its your turn </div>`
+            document.getElementById("turn2").innerHTML = `<div class="alert alert-danger"> its your turn </div>`
             setTimeout(function () {
-                document.getElementById("turn1").innerHTML = ""
+                document.getElementById("turn2").innerHTML = ""
             }, 3000)
-
+            
             box.classList.add("bg-success")
             box.innerHTML = `<h1>O</h1>`
             a.classList.add("progress")
@@ -97,7 +97,7 @@ function game(id) {
             m.classList.add("bg-danger")
             m.classList.add("progress-bar-striped")
             m.classList.add("progress-bar-animated")
-
+            
 
 
             chance = "p1"
