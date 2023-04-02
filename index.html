@@ -35,6 +35,10 @@
             border-radius: 1rem;
        
     }
+    
+    .circle{
+         overflow: hidden;
+         }
 
     </style>
     <link rel="manifest" href="manifest.json">
@@ -42,12 +46,12 @@
 </head>
 
 <body>
-    <div class="container" style="margin: 2rem;" id="playercard">
+    <div class="container" style="margin-top: 2rem;" id="playercard">
         <div class="row">
             <div class="col-sm-8 offset-sm-2">
-                <div class="card">
-                    <div class="circle card-header text-center" style=" background-color: rgb(202, 182, 223);  ">
-                        <h1 id="title">🌼🌻Welcome🌺🌷 To Time-Pass </h1>
+                <div class="circle  card">
+                    <div class="card-header text-center" style=" background-color: rgb(202, 182, 223);  ">
+                       <h1 id="title">🌼🌻Welcome🌺🌷 To Time-Pass </h1>
                         <P id="desc">🏴‍☠️🚥Enter Name of player🚥🏴‍☠️</P>
                     </div>
                     <div class="card-body ">
@@ -60,7 +64,7 @@
         </div>
     </div>
 
-    <div class="container my-5 " id="worning"></div>
+    <div class="dd-1 container my-5 text-center " id="worning"></div>
     <!-- container>.row>.col-sm-6.offset-sm-3>.card>.card-header+.card-body -->
     <div class="container d-none"  id="gamecard">
         <div class="row" id="title">
