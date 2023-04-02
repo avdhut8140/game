@@ -254,6 +254,7 @@ function checkall() {
 const cta = document.getElementById("cta")
 const title = document.getElementById("title")
 const desc = document.getElementById("desc")
+
 const tl = gsap.timeline()
 tl.from("#cta", {
     scale: 2,
@@ -271,6 +272,11 @@ tl.from(title, {
     x: "-200vh",
     duration: 1
 })
+
+gsap.from(".emj1", { scale: 1, x:400, rotate: +360, opacity: "10", duration: 1, delay: 0, yoyo:true,repeat:500, repeatDelay:0})
+gsap.to(".emj2", { scale: 1, x:400, rotate: +360, opacity: "10", duration: 1, delay: 0, yoyo:true,repeat:500, repeatDelay:0})
+gsap.to(".emj3", { scale: 1, x:400, rotate: +360, opacity: "10", duration: 1, delay: 0, yoyo:true,repeat:500, repeatDelay:0})
+gsap.to(".emj4", { scale: 1, y:-100, rotate: +360, opacity: "10", duration: 3, delay: 1, yoyo:true,repeat:500, repeatDelay:0})
 // function totalwin() {
 //     let twin = 0
 //     for (let i = 1; i <= 9; i++) {
