@@ -12,6 +12,7 @@ const player2wincount = document.getElementById("player2wincount")
 const drawcount = document.getElementById("drawcount")
 const totalcount = document.getElementById("totalcount")
 
+
 let p1count = 0, p2count = 0, dcount = 0, tcount = 0
 
 let playername1, playername2
@@ -35,6 +36,20 @@ function startgame() {
         x.innerHTML = document.getElementById("playername1").value
         y.innerHTML = document.getElementById("playername2").value
 
+        const data1 = localStorage.getItem("drawcount")
+      drawcount.innerHTML= JSON.parse(data1)
+        const data2 = localStorage.getItem("totalcount")
+        totalcount.innerHTML=JSON.parse(data2)
+        const data3 = localStorage.getItem("player1wincount")
+        player1wincount.innerHTML=JSON.parse(data3)
+        const data4 = localStorage.getItem("player2wincount")
+        player2wincount.innerHTML=JSON.parse(data4)
+
+
+        document.getElementById("output").innerHTML=` <div class="alert alert-dark text-center  animate__animated animate__backInDown ">☝☝☝☝☝☝ 👉👉Previous Tournaments Data 👈👈☝☝☝☝☝☝</div>`
+        setTimeout(function () {
+            document.getElementById("output").innerHTML = ""
+        }, 4000)
 
 
     }
@@ -106,7 +121,7 @@ function game(id) {
     }
 
     if (!winner() && checkall()) {
-        document.getElementById("output").innerHTML = `<div class="alert alert-warning">🥴🥴 DRAW MATCH 🥴🥴 </div>`
+        document.getElementById("output").innerHTML = `<div class="alert alert-warning animate__animated animate__heartBeat animate__infinite text-center">🥴🥴 DRAW MATCH 🥴🥴 </div>`
 
         setTimeout(function () {
             document.getElementById("output").innerHTML = ""
@@ -171,8 +186,8 @@ function checkwimmer(id1, id2, id3, color) {
 
     if ((isBOX1 && isBOX2 && isBOX3)) {
         console.log(`${color} is winner`);
-        color === "bg-danger" ? document.getElementById("output").innerHTML = `<div class="alert alert-danger"> 
-             ${m} is winner 🎇🎇🤩🤩</div>` : document.getElementById("output").innerHTML = `<div class="alert alert-success"> 
+        color === "bg-danger" ? document.getElementById("output").innerHTML = `<div class="alert alert-danger  text-center  animate__animated animate__backInLeft"> 
+             ${m} is winner 🎇🎇🤩🤩</div>` : document.getElementById("output").innerHTML = `<div class="alert alert-success  text-center  animate__animated animate__backInRight"> 
              ${n} is winner 💥💥🤑🤑</div>`
 
 
@@ -191,17 +206,22 @@ function checkwimmer(id1, id2, id3, color) {
 
     
 }
+ 
 function reserGame() {
     for (let i = 1; i <= 9; i++) {
         document.getElementById(`b${i}`).innerHTML = i
 
         document.getElementById(`b${i}`).classList.remove("bg-danger")
         document.getElementById(`b${i}`).classList.remove("bg-success")
-
-
-    }
-    tcount++
-    console.log(tcount);
+  }
+  tcount++
+  console.log(tcount);
+  
+  localStorage.setItem("drawcount", JSON.stringify(dcount))
+  localStorage.setItem("totalcount", JSON.stringify(tcount))
+  localStorage.setItem("player1wincount", JSON.stringify(p1count))
+  localStorage.setItem("player2wincount", JSON.stringify(p2count))
+ 
     stat()
 }
 function stat() {
@@ -226,6 +246,31 @@ function checkall() {
     return boxcount === 9 ? true : false
 
 }
+
+
+// gsap.from(".circle", { scale: 0, repeat: -2, yoyo: true, duration: 0.9})
+
+
+const cta = document.getElementById("cta")
+const title = document.getElementById("title")
+const desc = document.getElementById("desc")
+const tl = gsap.timeline()
+tl.from("#cta", {
+    scale: 2,
+    opacity: 0,
+    duration: 0.5
+})
+
+tl.from(desc, {
+    rotation: 360,
+    scale: 2,
+    opacity: 0,
+    duration: 1
+})
+tl.from(title, {
+    x: "-200vh",
+    duration: 1
+})
 // function totalwin() {
 //     let twin = 0
 //     for (let i = 1; i <= 9; i++) {
