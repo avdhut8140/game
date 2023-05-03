@@ -294,3 +294,110 @@ gsap.to(".emj4", { scale: 1, y:-100, rotate: +360, opacity: "10", duration: 3, d
 
 // }
 
+
+const emails = document.getElementById("emails")
+const namep = document.getElementById("name")
+const cpassword = document.getElementById("cpassword")
+const passwords = document.getElementById("passwords")
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+  const id1 = document.getElementById("signup")
+  const id2 = document.getElementById("login")
+  let saveemails=""
+  let  savecpasswords =""
+  function  sinup( ) {
+      if (email.value=== saveemails && password.value=== savecpasswords ) {
+          id1.classList.add("d-none")
+          playercard.classList.remove("d-none")
+      } else {
+          document.getElementById("worning").innerHTML = `   <div class="alert alert-danger "  >Invalid account / create account</div>`
+          setTimeout(function () {
+      document.getElementById("worning").innerHTML = ""
+  }, 3000)
+      }
+  }
+  function handalesubmit() { 
+    const saveemail = localStorage.getItem("email")
+    const savecpassword = localStorage.getItem("pass")
+      
+      saveemails=JSON.parse(saveemail)
+      savecpasswords =JSON.parse(savecpassword)
+                  validation(email)
+                  validation(password)
+          if (email.value==="" || password.value==="") {
+              document.getElementById("worning").innerHTML = ` <div class="alert alert-danger"  > please Fill The Information</div>`
+          setTimeout(function () {
+      document.getElementById("worning").innerHTML = ""
+
+  }, 3000)
+          }
+          else {
+            sinup();
+              
+          }
+                  
+  }
+  function validation(el) {
+      if (el.value === "") {
+          el.classList.add("is-invalid")
+          el.classList.remove("is-valid")
+
+      } else {
+
+          el.classList.remove("is-invalid")
+          el.classList.add("is-valid")
+      }
+  } function validate() {
+
+      console.log("hellow");
+      validation(email)
+      validation(password)
+  }
+
+ 
+  function newaccount(){
+      id1.classList.add("d-none")
+     id2.classList.remove("d-none")
+}
+  function oddaccount(){
+      id2.classList.add("d-none")
+     id1.classList.remove("d-none")
+  }
+ function storage(){
+  localStorage.setItem("email", JSON.stringify(emails.value))
+    localStorage.setItem("pass", JSON.stringify(cpassword.value))
+ }
+  function Sigin(){
+    cheak();
+  }
+ function cheak(){
+ if(emails.value===""||namep.value==="" ){ 
+  document.getElementById("worning").innerHTML = ` <div class="alert alert-danger"  > please fill email </div>`
+          setTimeout(function () {
+      document.getElementById("worning").innerHTML = ""
+
+  }, 3000)
+ }
+ else if(password.value===""&& cpassword.value===""){
+  document.getElementById("worning").innerHTML = ` <div class="alert alert-danger"> please fill password </div>`
+          setTimeout(function () {
+      document.getElementById("worning").innerHTML = ""
+
+  }, 3000)
+ }
+ else if (passwords.value===cpassword.value ) {
+   id2.classList.add("d-none")
+   id1.classList.remove("d-none")
+   
+   
+   storage();
+  }else {
+    document.getElementById("worning").innerHTML = ` <div class="alert alert-danger"> password don't mach </div>`
+            setTimeout(function () {
+        document.getElementById("worning").innerHTML = ""
+
+    }, 2000)
+  }
+ }
+ 
+

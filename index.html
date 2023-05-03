@@ -85,8 +85,109 @@
 
 </head>
 
-<body>
-    <div class="container text-center" style="margin-top: 2rem;" id="playercard">
+<body>  
+    <!-- singup start -->
+    <div class=" container" id="signup">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3 text-center">
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <div>
+                            <label for="email" class="form-label">First Email</label>
+                            <input type="text" onkeyup="validate()" class="form-control" id="email"
+                                placeholder="Enter Your Email" />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please choose a username.</div>
+                        </div>
+                        <div class="mt-2">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" onkeyup="validate()" class="form-control" id="password"
+                                placeholder="Enter Your Password" />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please choose a username.</div>
+                        </div>
+                        <button onclick="handalesubmit()" type="button" class="btn btn-primary w-100 mt-3">
+                            Login
+                        </button>
+                        <p class="text-center mt-3">
+                            Dont Have Account? <a onclick="newaccount()" href="#">Create Account</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- singup start -->
+    <!-- login card start -->
+  <div class="container d-none" id="login">
+        <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+            <div class="card">
+              <div class="card-header">Signup</div>
+              <div class="card-body">
+                <div>
+                  <label for="name" class="form-label">First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter your name"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+                <div class="mt-2">
+                  <label for="email" class="form-label">First Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="emails"
+                    placeholder="Enter Your Email"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+                <div class="mt-2">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="passwords"
+                    placeholder="Enter Your Password"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a password.</div>
+                </div>
+                <div class="mt-2">
+                  <label for="cpassword" class="form-label"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cpassword"
+                    placeholder="Confirm Your Password"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">
+                    Please Recheck Your Password.
+                  </div>
+                </div>
+                <button type="button"onclick="Sigin()" class="btn btn-primary w-100 mt-3">
+                  Signup
+                </button>
+                <p class="text-center mt-3">
+                  Already Have Account? <a onclick="oddaccount()" href="#">Login</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ <!-- login card end-->
+      <!-- playercard start -->
+    <div class="container text-center d-none" style="margin-top: 2rem;" id="playercard">
         <div class="row">
             <div class="col-sm-8 offset-sm-2">
                 <div class="circle  card">
@@ -116,8 +217,9 @@
             </div>
        
         </div>
-  
+   <!-- playercard end -->
     <div class="dd-1 container my-5 text-center " id="worning"></div>
+    <!-- gamecard start -->
     <!-- container>.row>.col-sm-6.offset-sm-3>.card>.card-header+.card-body -->
     <div class="container d-none"  id="gamecard">
         <div class="row" id="title">
@@ -214,7 +316,7 @@
         </div>
 
     </div>
-    
+     <!-- gamecard end -->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
         integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
